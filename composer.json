@@ -1,0 +1,41 @@
+{
+  "name": "justoverclock/image-gallery",
+  "description": "Add an image gallery to Flarum",
+  "keywords": [
+    "flarum"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": "^1.0"
+  },
+  "require-dev": {
+    "flarum/testing": "^1.0"
+  },
+  "authors": [
+    {
+      "name": "Marco Colia",
+      "email": "info@flarum.it",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Justoverclock\\ImageGallery\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "ImageGallery",
+      "category": "",
+      "icon": {
+        "name": "",
+        "backgroundColor": "",
+        "color": ""
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+    }
+  }
+}
