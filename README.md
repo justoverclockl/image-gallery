@@ -4,6 +4,9 @@
 
 A [Flarum](http://flarum.org) extension. Add an image gallery to Flarum
 
+![Immagine 2021-07-18 173854](https://user-images.githubusercontent.com/79002016/126073437-249823f6-0bf2-4b2f-88c3-8096f7536386.png)
+
+
 ### Installation
 
 Install with composer:
