@@ -91,15 +91,13 @@ module.exports =
 /*!******************!*\
   !*** ./admin.js ***!
   \******************/
-/*! no static exports found */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_admin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/admin */ "./src/admin/index.js");
-/* harmony import */ var _src_admin__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_admin__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _src_admin__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _src_admin__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
+/* empty/unused harmony star reexport */
 
 /***/ }),
 
@@ -107,12 +105,49 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************!*\
   !*** ./src/admin/index.js ***!
   \****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/app */ "flarum/app");
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_0__);
+/*
+ * This file is part of justoverclock/custom-header.
+ *
+ * Copyright (c) 2021 Marco Colia.
+ * https://flarum.it
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
+flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('justoverclock/image-gallery', function () {
+  flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.extensionData["for"]('justoverclock-image-gallery').registerSetting({
+    setting: 'justoverclock-image-gallery.apiKey',
+    name: 'apiKey',
+    type: 'text',
+    label: flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.translator.trans('image-gallery.admin.apiKey'),
+    help: flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.translator.trans('image-gallery.admin.apiKey-help')
+  })["for"]('justoverclock-image-gallery').registerSetting({
+    setting: 'justoverclock-image-gallery.galId',
+    name: 'galId',
+    type: 'text',
+    label: flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.translator.trans('image-gallery.admin.galId'),
+    help: flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.translator.trans('image-gallery.admin.galId-help')
+  });
+});
+
+/***/ }),
+
+/***/ "flarum/app":
+/*!********************************************!*\
+  !*** external "flarum.core.compat['app']" ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-app.initializers.add('justoverclock/image-gallery', function () {
-  console.log('[justoverclock/image-gallery] Hello, admin!');
-});
+module.exports = flarum.core.compat['app'];
 
 /***/ })
 

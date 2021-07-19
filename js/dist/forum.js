@@ -187,15 +187,12 @@ var ImageGallery = /*#__PURE__*/function (_Page) {
   var _proto = ImageGallery.prototype;
 
   _proto.view = function view() {
-    var baseUrl = flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('baseUrl');
-    return m('.IndexPage', [flarum_components_IndexPage__WEBPACK_IMPORTED_MODULE_3___default.a.prototype.hero(), m('.container', m('.sideNavContainer', [m('nav.IndexPage-nav.sideNav', m('ul', flarum_helpers_listItems__WEBPACK_IMPORTED_MODULE_4___default()(flarum_components_IndexPage__WEBPACK_IMPORTED_MODULE_3___default.a.prototype.sidebarItems().toArray()))), m('.IndexPage-results.sideNavOffset', [m("h1", m("div", {
-      id: "galleryTitle"
-    })), m("div", {
-      style: {
-        "clear": "both"
-      }
-    }, m("div", {
-      id: "flickr"
+    return m('.IndexPage', [flarum_components_IndexPage__WEBPACK_IMPORTED_MODULE_3___default.a.prototype.hero(), m('.container', m('.sideNavContainer', [m('nav.IndexPage-nav.sideNav', m('ul', flarum_helpers_listItems__WEBPACK_IMPORTED_MODULE_4___default()(flarum_components_IndexPage__WEBPACK_IMPORTED_MODULE_3___default.a.prototype.sidebarItems().toArray()))), m('.IndexPage-results.sideNavOffset', [m('h1', m('div', {
+      id: 'galleryTitle'
+    })), m('div', {
+      className: 'clearboth'
+    }, m('div', {
+      id: 'flickr'
     }))])]))]);
   };
 
@@ -219,38 +216,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_common_extend__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var flarum_forum_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/forum/app */ "flarum/forum/app");
 /* harmony import */ var flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_forum_app__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_ImageGallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ImageGallery */ "./src/forum/components/ImageGallery.js");
-/* harmony import */ var flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! flarum/common/components/Page */ "flarum/common/components/Page");
-/* harmony import */ var flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var flarum_components_LinkButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/components/LinkButton */ "flarum/components/LinkButton");
+/* harmony import */ var flarum_components_LinkButton__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_components_LinkButton__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_ImageGallery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ImageGallery */ "./src/forum/components/ImageGallery.js");
+/* harmony import */ var flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! flarum/common/components/Page */ "flarum/common/components/Page");
+/* harmony import */ var flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flarum/forum/components/IndexPage */ "flarum/forum/components/IndexPage");
+/* harmony import */ var flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_5__);
+/*
+ * This file is part of justoverclock/image-gallery.
+ *
+ * Copyright (c) 2021 Marco Colia.
+ * https://flarum.it
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
 
 
 
+
+
+
+/*  global $ */
 
 flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('justoverclock/image-gallery', function () {
   flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default.a.routes.Gallery = {
     path: '/gallery',
-    component: _components_ImageGallery__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _components_ImageGallery__WEBPACK_IMPORTED_MODULE_3__["default"]
   };
 });
-Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_3___default.a.prototype, 'oncreate', function () {
-  var assetsFolder = flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('baseUrl') + '/assets/extensions/justoverclock-image-gallery/';
-  var apikey = "d3b223508088ca68804ec22efd343d1f";
-  var galId = "72157680008410536";
+Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_5___default.a.prototype, 'navItems', function (navItems) {
+  navItems.add('Gallery', m(flarum_components_LinkButton__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default.a.route('Gallery'),
+    icon: "fas fa-camera-retro"
+  }, flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('image-gallery.forum.link-title')), 100);
+  return navItems;
+});
+Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, 'oncreate', function () {
+  var apikey = flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('apiKey');
+  var galId = flarum_forum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('galId');
   var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=" + apikey + "&gallery_id=" + galId + "&format=json&nojsoncallback=1",
-    "method": "GET",
-    "headers": {}
+    async: true,
+    crossDomain: true,
+    url: 'https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=' + apikey + '&gallery_id=' + galId + '&format=json&nojsoncallback=1',
+    method: 'GET',
+    headers: {}
   };
   $.ajax(settings).done(function (data) {
-    $("#galleryTitle").append(data.photos.photo[0].title + " Gallery");
+    $('#galleryTitle').append(data.photos.photo[0].title + ' Gallery');
     $.each(data.photos.photo, function (i, gp) {
       var farmId = gp.farm;
       var serverId = gp.server;
       var id = gp.id;
       var secret = gp.secret;
-      $("#flickr").append('<a href="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg""><img class="flickrimg" src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/></a>');
+      $('#flickr').append('<a href="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg" data-lightbox="roadtrip" target="_blank"><img class="flickrimg" src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/></a>');
     });
   });
 });
@@ -290,6 +310,17 @@ module.exports = flarum.core.compat['components/IndexPage'];
 
 /***/ }),
 
+/***/ "flarum/components/LinkButton":
+/*!**************************************************************!*\
+  !*** external "flarum.core.compat['components/LinkButton']" ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/LinkButton'];
+
+/***/ }),
+
 /***/ "flarum/components/Page":
 /*!********************************************************!*\
   !*** external "flarum.core.compat['components/Page']" ***!
@@ -309,6 +340,17 @@ module.exports = flarum.core.compat['components/Page'];
 /***/ (function(module, exports) {
 
 module.exports = flarum.core.compat['forum/app'];
+
+/***/ }),
+
+/***/ "flarum/forum/components/IndexPage":
+/*!*******************************************************************!*\
+  !*** external "flarum.core.compat['forum/components/IndexPage']" ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['forum/components/IndexPage'];
 
 /***/ }),
 

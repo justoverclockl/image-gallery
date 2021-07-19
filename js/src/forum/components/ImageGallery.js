@@ -15,26 +15,18 @@ import listItems from 'flarum/helpers/listItems';
 
 export default class ImageGallery extends Page {
 
-  view() {
-    const baseUrl = app.forum.attribute('baseUrl');
-
-    return m('.IndexPage', [
-      IndexPage.prototype.hero(),
-      m('.container',
-        m('.sideNavContainer', [
-          m('nav.IndexPage-nav.sideNav', m('ul', listItems(IndexPage.prototype.sidebarItems().toArray()))),
-          m('.IndexPage-results.sideNavOffset',
-            [
-              m("h1",
-                m("div", {id:"galleryTitle"})
-              ),
-              m("div", {style:{"clear":"both"}},
-                m("div", {id:"flickr"})
-              )
-            ]
-          ),
-        ])
-      ),
-    ]);
-  }
+    view() {
+        return m('.IndexPage', [
+            IndexPage.prototype.hero(),
+            m('.container',
+                m('.sideNavContainer', [
+                    m('nav.IndexPage-nav.sideNav', m('ul', listItems(IndexPage.prototype.sidebarItems().toArray()))),
+                    m('.IndexPage-results.sideNavOffset', [
+                        m('h1', m('div', { id: 'galleryTitle' })),
+                        m('div', {className: 'clearboth'}, m('div', { id: 'flickr' })),
+                    ]),
+                ])
+            ),
+        ]);
+    }
 }
