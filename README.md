@@ -1,6 +1,6 @@
 # ImageGallery
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/justoverclock/image-gallery.svg)](https://packagist.org/packages/justoverclock/image-gallery) [![Total Downloads](https://img.shields.io/packagist/dt/justoverclock/image-gallery.svg)](https://packagist.org/packages/justoverclock/image-gallery)
+[![Support Me](https://img.shields.io/badge/Donate-Support%20My%20Work-orange)](https://github.com/sponsors/justoverclockl) [![Latest Stable Version](https://poser.pugx.org/justoverclock/image-gallery/v)](https://packagist.org/packages/justoverclock/image-gallery) [![Total Downloads](https://poser.pugx.org/justoverclock/image-gallery/downloads)](https://packagist.org/packages/justoverclock/image-gallery)
 
 A [Flarum](http://flarum.org) extension. Add an image gallery to Flarum directly from Flickr
 
