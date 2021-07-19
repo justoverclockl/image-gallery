@@ -4,7 +4,7 @@
 
 A [Flarum](http://flarum.org) extension. Add an image gallery to Flarum directly from Flickr
 
-![Immagine 2021-07-18 173854](https://user-images.githubusercontent.com/79002016/126073437-249823f6-0bf2-4b2f-88c3-8096f7536386.png)
+![DZC0xZnFX3](https://user-images.githubusercontent.com/79002016/126160076-afb1a2de-0696-4811-8749-205842708696.gif)
 
 
 ### Installation
